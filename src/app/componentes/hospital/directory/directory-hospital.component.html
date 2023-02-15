@@ -1,0 +1,30 @@
+
+<p>{{MessageWelcome}}</p>
+<app-menu-main></app-menu-main>
+
+<button (click)='getData()'>Visualizar Todo</button>
+<img  [src] = 'showImg()'>
+<ul *ngFor= "let element of infoDataAll">
+    <li>{{"Hospital" + element.id}}
+        <ul>
+            Name
+            <li>
+            {{element.name}}
+            </li>
+        </ul>
+        <ul>
+            Adress
+            <li>
+            {{element.address}}
+            </li>
+        </ul>
+        <ul>
+            Phone
+            <li>
+            {{element.phone}}
+            </li>
+            {{ThereData}}
+        </ul>
+    </li>
+
+</ul>

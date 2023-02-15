@@ -1,0 +1,27 @@
+
+<h2>{{MessageWelcome}}</h2>
+<app-menu-main></app-menu-main>
+
+<button (click)='getData()'>Visualizar Todo</button>
+
+<ul *ngFor= "let element of infoDataAll">
+    <li>{{"Medical Speciality " + element.id}}
+        <ul>
+            Name
+            <li>
+            {{element.name}}
+            </li>
+        </ul>
+        <ul>
+            info
+            <li>
+            {{element.info}}
+            </li>
+        </ul>
+        <ul>
+            Phone
+            <li>
+            {{element.schedule}}
+            </li>
+        </ul>
+    </li>

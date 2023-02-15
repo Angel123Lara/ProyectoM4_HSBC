@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -58,6 +59,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          
           "configurations": {
             "production": {
               "browserTarget": "ProyectoM4_Angular:build:production"

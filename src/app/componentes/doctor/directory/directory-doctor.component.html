@@ -1,0 +1,25 @@
+
+<h2>{{MessageWelcome}}</h2>
+<app-menu-main></app-menu-main>
+<button (click)='getData()'>Visualizar Todo</button>
+
+<img  [src] = 'showImg()'>
+<ul *ngFor= "let element of infoDataAll">
+    <li>{{"Doctor " + element.id}}
+        <ul>
+            Name
+            <li>
+            {{element.name}}
+            </li>
+        </ul>
+        <ul>
+            Cedula
+            <li>
+            {{element.cedula}}
+            
+            </li>
+        </ul>
+        
+    </li>
+
+</ul>
