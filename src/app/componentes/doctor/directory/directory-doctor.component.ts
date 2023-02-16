@@ -21,7 +21,7 @@ export class DirectoryDoctorComponent implements OnInit {
      {
        next: (value) => {this.MessageWelcome = value},
        error:(error) =>{window.alert(error.message)},
-       complete:() => {this.ThereData= true}
+    
        }
          
     )   
@@ -42,6 +42,7 @@ export class DirectoryDoctorComponent implements OnInit {
  }
 
 showImg() : any{
-  return this.ThereData ? '' : 'https://cdn-icons-png.flaticon.com/512/4497/4497898.png';
+ return this.ThereData ? '' : 'https://cdn-icons-png.flaticon.com/512/4497/4497898.png';
+ 
 }
 }

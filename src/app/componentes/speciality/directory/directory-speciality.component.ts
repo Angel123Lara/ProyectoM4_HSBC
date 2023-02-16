@@ -29,13 +29,15 @@ export class DirectorySpecialityComponent implements OnInit{
     {
       next: (value) => {this.infoDataAll = value
       console.log(this.infoDataAll)},
-      error:(error) =>{window.alert(error.message)}
+      error:(error) =>{window.alert(error.message)},
+      complete:()=>{this.ThereData = true,console.log(this.ThereData)}
     }
   )
 
-  if(this.infoDataAll!){
-    this.ThereData = true;
-  }
-
 }
+
+showImg() : any{
+  return this.ThereData ? '' : 'https://www.uv.mx/csalud/files/2013/02/becas-mexico-2019-apoyos-especialidad-medica-conacyt.jpg';
+  
+ }
 }

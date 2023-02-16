@@ -2,7 +2,7 @@
 <h2>{{MessageWelcome}}</h2>
 <app-menu-main></app-menu-main>
 <button (click)='getData()'>Visualizar Todo</button>
-
+<h6></h6>
 <img  [src] = 'showImg()'>
 <ul *ngFor= "let element of infoDataAll">
     <li>{{"Doctor " + element.id}}
@@ -23,3 +23,4 @@
     </li>
 
 </ul>
+

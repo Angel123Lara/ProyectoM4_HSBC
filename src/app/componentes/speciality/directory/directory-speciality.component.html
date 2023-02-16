@@ -3,7 +3,8 @@
 <app-menu-main></app-menu-main>
 
 <button (click)='getData()'>Visualizar Todo</button>
-
+<h6></h6>
+<img [src]="showImg()">
 <ul *ngFor= "let element of infoDataAll">
     <li>{{"Medical Speciality " + element.id}}
         <ul>
