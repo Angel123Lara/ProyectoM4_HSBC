@@ -28,7 +28,7 @@ jobs:
 
     - name: Deploy
       if: success()
-      uses: ProyectoM4_HSBC@v3
+      uses: Angel123Lara/ProyectoM4_HSBC@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: dist/ProyectoM4_Angular
