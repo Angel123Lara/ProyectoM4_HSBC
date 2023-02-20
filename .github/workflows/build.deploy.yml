@@ -23,7 +23,7 @@ jobs:
           npm install
           npm run-script deploy
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: Angel123Lara/ProyectoM4_HSBC@releases/v3
         with:
           GITHUB_TOKEN: ${{secrets.TOKEN}}
           BRANCH: gh-pages
