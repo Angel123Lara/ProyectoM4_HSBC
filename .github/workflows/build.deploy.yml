@@ -11,13 +11,13 @@ steps:
 - uses: actions/checkout@v1
 - uses: actions/setup-node@v1
 with:
-node-version: '18.14.0'
+  node-version: '18.14.0'
 - uses: actions/cache@v1
 with:
-path: ~/.npm
+  path: ~/.npm
 key: ${{runner.os}}-node-${{ hashFiles('**/package-locj.json')}}
-restore-keys: |
-${{ runner.os}}-node-
+  restore-keys: |
+  ${{ runner.os}}-node-
 -name: Build
 run: |
 npm install
@@ -25,6 +25,6 @@ npm run-script deploy
 - name: Deploy
 uses: JamesIves/github-pages-deploy-action@releases/v3
 with:
-GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
-BRANCH: gh-pages
-FOLDER: dist/proyecto-m4-angular
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+  BRANCH: gh-pages
+  FOLDER: dist/proyecto-m4-angular
