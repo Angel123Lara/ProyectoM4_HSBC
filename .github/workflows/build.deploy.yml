@@ -3,7 +3,8 @@ on:
   push
 branches:
 - main
-jobs: gh-pages
+jobs:
+  gh-pages
 build-and-deploy:
 runs-on: ubuntu-latest
 steps:
