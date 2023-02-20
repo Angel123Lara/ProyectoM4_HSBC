@@ -14,10 +14,10 @@ jobs:
           node-version: '18.14.0'
       - uses: actions/cache@v1
         with:
-        path: ~/.npm
-        key: ${{runner.os}}-node-${{ hashFiles('**/package-locj.json')}}
-        restore-keys: |
-          ${{ runner.os}}-node-
+          path: ~/.npm
+          key: ${{runner.os}}-node-${{ hashFiles('**/package-locj.json')}}
+          restore-keys: |
+            ${{ runner.os}}-node-
       - name: Build
         run: |
           npm install
