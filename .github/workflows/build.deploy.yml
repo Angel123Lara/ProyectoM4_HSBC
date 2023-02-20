@@ -28,7 +28,7 @@ jobs:
 
     - name: Deploy
       if: success()
-      uses: peaceiris/gh-pages@v3
+      uses: peaceiris/ProyectoM4_HSBC@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: dist/ProyectoM4_Angular
