@@ -4,7 +4,8 @@ on:
 branches:
 - main
 jobs:
-- gh-pages
+  name:
+    gh-pages
 build-and-deploy:
 runs-on: ubuntu-latest
 steps:
