@@ -18,7 +18,7 @@ steps:
     key: ${{runner.os}}-node-${{ hashFiles('**/package-locj.json')}}
     restore-keys: |
       ${{ runner.os}}-node-
--name: Build
+- name: Build
   run: |
     npm install
     npm run-script deploy
