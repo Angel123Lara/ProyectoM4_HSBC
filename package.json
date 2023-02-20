@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href https://Angel123Lara.github.io/ProyectoM4_HSBC/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "deploy" : "ng build --prod --base-href=/ProyectoM4_HSBC"
   },
   "private": true,
