@@ -27,4 +27,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{secrets.TOKEN}}
           BRANCH: gh-pages
-          FOLDER: docs/dist/proyecto-m4-angular
+          FOLDER: dist/proyecto-m4-angular
