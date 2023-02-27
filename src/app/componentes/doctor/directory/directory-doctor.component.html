@@ -1,10 +1,40 @@
-
+<div class = "text-center m-1">
 <h2>{{MessageWelcome}}</h2>
+</div>
+
 <app-menu-main></app-menu-main>
-<button (click)='getData()'>Visualizar Todo</button>
-<h6></h6>
-<img  [src] = 'showImg()'>
-<ul *ngFor= "let element of infoDataAll">
+
+<div class="container py-5">
+<div *ngIf="ThereData!; then thenBlock else elseBlock"></div>
+<ng-template #elseBlock>
+    <button class="row" (click)='getData()'>Visualizar Todo</button>
+    <div class="cont-img">
+      <img   [src] = 'showImg()' class="img-fluid">    
+    </div>
+  </ng-template>
+
+<ng-template #thenBlock>
+
+<button (click)='eraseData()'>Limpiar info</button>
+<mat-list>
+    <mat-list-item class="h-auto" *ngFor="let element of infoDataAll">
+      <mat-icon matListItemIcon>folder</mat-icon>
+      <h3 matListItemTitle>{{element.name}}</h3>
+      <p matListItemLine>
+        <span>Cedula</span>
+        <span class="demo-2"> -- {{element.cedula}}</span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</ng-template>
+
+</div>
+
+
+
+
+
+<!-- <ul *ngFor= "let element of infoDataAll">
     <li>{{"Doctor " + element.id}}
         <ul>
             Name
@@ -22,5 +52,5 @@
         
     </li>
 
-</ul>
+</ul> -->
 

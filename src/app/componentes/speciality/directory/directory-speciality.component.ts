@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WelcomePageServiceService } from 'src/app/services/General/General-service.service';
+import { GeneralServiceService } from 'src/app/services/General/General-service.service';
 
 @Component({
   selector: 'app-directory-speciality',
@@ -12,10 +12,14 @@ export class DirectorySpecialityComponent implements OnInit{
   public UrlAll: string = "MedicalSpeciality/all";
   public infoDataAll: any;
   public ThereData : boolean = false;
-  constructor(private WelcomeService : WelcomePageServiceService){}
-  ngOnInit(): void {
+  constructor(
+    private GeneralService : GeneralServiceService
+    ){}
+  
+  
+    ngOnInit(): void {
      
-    this.WelcomeService.getHome("MedicalSpeciality").subscribe(
+    this.GeneralService.getTitle("MedicalSpeciality").subscribe(
      {
        next: (value) => {this.MessageWelcome = value},
        error:(error) =>{window.alert(error.message)}
@@ -25,7 +29,7 @@ export class DirectorySpecialityComponent implements OnInit{
  }
  getData() : void{
 
-  this.WelcomeService.getDataAll(this.UrlAll).subscribe(
+  this.GeneralService.getDataAll(this.UrlAll).subscribe(
     {
       next: (value) => {this.infoDataAll = value
       console.log(this.infoDataAll)},
@@ -34,6 +38,12 @@ export class DirectorySpecialityComponent implements OnInit{
     }
   )
 
+}
+
+eraseData(): void{
+  this.ThereData = false;
+  this.infoDataAll = {}
+  console.log(this.infoDataAll)
 }
 
 showImg() : any{

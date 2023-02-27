@@ -2,18 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuMainComponent } from './menu-main/menu-main.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { AppModule } from '../app.module';
-import { ObjToArrayPipe } from '../objToArray.pipe';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
 @NgModule({
-  declarations: [MenuMainComponent,ObjToArrayPipe],
+  declarations: [MenuMainComponent],
   imports: [
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    MatTabsModule
   ],exports:[
-    MenuMainComponent
+    MenuMainComponent,
+    MatListModule,
+    MatIconModule,
+
   ]
 
 })

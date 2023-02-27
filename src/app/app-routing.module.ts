@@ -2,16 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DirectoryDoctorComponent } from './componentes/doctor/directory/directory-doctor.component';
 import { DirectoryHospitalComponent } from './componentes/hospital/directory/directory-hospital.component';
+import { LoginComponent } from './componentes/login/login.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import { DirectorySpecialityComponent } from './componentes/speciality/directory/directory-speciality.component';
 import { WelcomePageComponent } from './componentes/welcome-page/directory/welcome-page.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 const routes: Routes = [
+ 
+  {path: "welcome",component: WelcomePageComponent, canActivate: [AuthGuard]},
+  {path: "login", component: LoginComponent},
   {path: "doctor",component: DirectoryDoctorComponent},
   {path: "hospital",component: DirectoryHospitalComponent},
   {path: "speciality",component: DirectorySpecialityComponent},
-  {path: "welcome",component: WelcomePageComponent},
+ 
   {path: "", redirectTo: "welcome",pathMatch: "full"},
   {path: '**', component: NotFoundComponent} 
   

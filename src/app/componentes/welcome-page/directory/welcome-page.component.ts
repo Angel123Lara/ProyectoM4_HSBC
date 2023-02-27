@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WelcomePageServiceService } from 'src/app/services/General/General-service.service';
+import { GeneralServiceService } from 'src/app/services/General/General-service.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -10,11 +10,11 @@ export class WelcomePageComponent implements OnInit {
 
   public MessageWelcome : any;
 
-  constructor(private WelcomeService : WelcomePageServiceService){}
+  constructor(private GeneralService : GeneralServiceService){}
   
   ngOnInit(): void {
      
-     this.WelcomeService.getHome("Home").subscribe(
+     this.GeneralService.getHome("Home").subscribe(
       {
         next: (value) => {this.MessageWelcome = value},
         error:(error) =>{window.alert(error.message)}
@@ -25,7 +25,7 @@ export class WelcomePageComponent implements OnInit {
 
   getData() : void{
 
-    this.WelcomeService.getDataAll("Home").subscribe(
+    this.GeneralService.getDataAll("Home").subscribe(
       {
         next: (value) => {
         console.log(value)},

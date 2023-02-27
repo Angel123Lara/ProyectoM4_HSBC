@@ -1,0 +1,12 @@
+.img-fluid{
+    max-width: 50%;
+    height: auto;
+}
+
+.cont-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

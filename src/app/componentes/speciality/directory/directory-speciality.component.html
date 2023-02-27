@@ -1,10 +1,43 @@
-
-<h2>{{MessageWelcome}}</h2>
+<div class = "text-center m-1">
+    <h2>{{MessageWelcome}}</h2>
+    </div>
 <app-menu-main></app-menu-main>
 
+<div class="container py-5">
+    <div *ngIf="ThereData!; then thenBlock else elseBlock"></div>
+    <ng-template #elseBlock>
+        <button class="row" (click)='getData()'>Visualizar Todo</button>
+        <div class="cont-img">
+          <img   [src] = 'showImg()' class="img-fluid">    
+        </div>
+      </ng-template>
+    
+    <ng-template #thenBlock>
+    
+    <button (click)='eraseData()'>Limpiar info</button>
+    <mat-list class="py-5">
+        <mat-list-item class="h-auto" *ngFor="let element of infoDataAll">
+          <mat-icon matListItemIcon>folder</mat-icon>
+          <h3 matListItemTitle>{{element.name}}</h3>
+          <p matListItemLine>
+            <span>info</span>
+            -- {{element.info}} <br>
+           <span>horario de atención</span>
+           <span> -- {{element.schedule}}</span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+    </ng-template>
+    
+    </div>
+
+
+<!-- 
 <button (click)='getData()'>Visualizar Todo</button>
 <h6></h6>
-<img [src]="showImg()">
+<div class="cont-img">
+    <img   [src] = 'showImg()' class="img-fluid">    
+  </div>
 <ul *ngFor= "let element of infoDataAll">
     <li>{{"Medical Speciality " + element.id}}
         <ul>
@@ -25,4 +58,4 @@
             {{element.schedule}}
             </li>
         </ul>
-    </li>
+    </li> -->
