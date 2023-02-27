@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { DoctorModule } from './componentes/doctor/doctor.module';
 import { LoginComponent } from './componentes/login/login.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
-import { AddOneComponent } from './componentes/doctor/add-one/add-one.component';
+//import { AddOneDocComponent } from './componentes/doctor/add-oneDoc/add-one.component';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { AddOneComponent } from './componentes/doctor/add-one/add-one.component'
     AppComponent,
     NotFoundComponent,
     LoginComponent,
-    AddOneComponent
+   // AddOneDocComponent
 
   ],
   imports: [

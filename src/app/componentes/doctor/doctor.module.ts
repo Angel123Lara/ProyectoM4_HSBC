@@ -2,7 +2,8 @@ import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DirectoryDoctorComponent } from './directory/directory-doctor.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { AddOneComponent } from './add-one/add-one.component';
+import { AddOneDocComponent } from './add-oneDoc/add-one.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -10,7 +11,7 @@ import { AddOneComponent } from './add-one/add-one.component';
 
 @NgModule({
   declarations: [
-    DirectoryDoctorComponent],
+    DirectoryDoctorComponent, AddOneDocComponent],
   imports: [
     CommonModule,SharedModule
   ],

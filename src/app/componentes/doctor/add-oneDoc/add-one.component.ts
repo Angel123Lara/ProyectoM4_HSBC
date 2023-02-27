@@ -8,7 +8,7 @@ import { GeneralServiceService } from 'src/app/services/General/General-service.
   templateUrl: './add-one.component.html',
   styleUrls: ['./add-one.component.css']
 })
-export class AddOneComponent {
+export class AddOneDocComponent {
   contenido: DoctorData={
     name: '',
     cedula: ''
