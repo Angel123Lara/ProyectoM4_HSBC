@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --configuration=production"
+    "deploy": "ng build --configuration=production --base-href welcome"
   },
   "private": true,
   "dependencies": {
