@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --configuration=production --base-href ProyectoM4_HSBC"
+    "deploy": "ng build --configuration=production"
   },
   "private": true,
   "dependencies": {
