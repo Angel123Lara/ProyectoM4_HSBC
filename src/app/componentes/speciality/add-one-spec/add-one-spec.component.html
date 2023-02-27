@@ -1,0 +1,39 @@
+<p>add-one-spec works!</p>
+
+
+<div class="container py-5">
+    <form class="mx-auto" style="max-width: 25rem;" #form="ngForm" (ngSubmit)="create(form)">
+        <h1 class="mb-5 text -center">Agregar Registro</h1>
+        <div id="MessageError">
+        <li class="list-group-item containerMsgError" [hidden]="!existError"
+            *ngFor="let counter of keyError"
+            (click) = "existError = false">
+            {{erroresAux[counter]}}
+        </li>
+        </div>
+        <div id="msgExito" [hidden]="!sucessful">
+            <p (click)="sucessful = false">
+                Registro Guardado con éxito
+            </p>
+
+        </div>
+        <div class="mb-3">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" class="form-control" [(ngModel)]="contenido.name">
+            
+        </div>
+        <div class="mb-3">
+            <label for="descripcion">  Descripción </label>
+            <input id="descripcion" name="descripcion" class="form-control" [(ngModel)]="contenido.info">
+        </div>
+
+        <div class="mb-3">
+            <label for="horario">  Horario </label>
+            <input id="horario" name="horario" class="form-control" [(ngModel)]="contenido.schedule">
+        </div>
+
+        <div class="d-grid">
+            <button class="btn btn-lg btn-primary"> añadir</button>
+        </div>
+    </form>
+</div>

@@ -29,4 +29,8 @@ export class GeneralServiceService {
     return this.http.post(this.url + pathAdd,body, {responseType: 'json'})
 
   }
+
+  deleteItem(pathAdd : String, id : string){
+    return this.http.delete(this.url + pathAdd + id)
+  }
 }
