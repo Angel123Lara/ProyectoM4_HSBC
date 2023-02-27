@@ -12,6 +12,9 @@ export class DirectoryHospitalComponent implements OnInit{
   public UrlAll : String = "hospitals/all"
   public ThereData : boolean = false;
 
+  public key : any;
+  public values : any;
+
 
   constructor(
     private GeneralService : GeneralServiceService
@@ -34,11 +37,20 @@ export class DirectoryHospitalComponent implements OnInit{
       next: (value) => {this.infoDataAll = value
       console.log(this.infoDataAll)},
       error:(error) =>{window.alert(error.message)},
-      complete:() =>{this.ThereData = true, console.log(this.ThereData)}
+      complete:() =>{
+        this.manageDate();
+        this.ThereData = true, console.log(this.ThereData)
+      
+      }
     }
   )
 
 }
+
+manageDate() : void{
+  this.key = Object.keys(this.infoDataAll[0]).filter(item => item != 'id');
+  this.values = Object.values(this.infoDataAll[0]);
+ }
 
 eraseData(): void{
   this.ThereData = false;

@@ -4,28 +4,44 @@
 <app-menu-main></app-menu-main>
 
 <div class="container py-5">
+
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Opciones
+    </a>
+    
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" (click)="getData()" [routerLink]="['/speciality']">Ver todo</a></li>
+      <li><a class="dropdown-item" (click)="eraseData()">Buscar</a></li>
+      <li><a class="dropdown-item" (click)="eraseData(); ThereData=false" [routerLink]="['/hospital/add']">Añadir</a></li>
+      <li><a class="dropdown-item" (click)="eraseData();ThereData=false">Modificar</a></li>
+      <li><a class="dropdown-item" (click)="eraseData(); ThereData=false" [routerLink]="['/hospital/delete']">Eliminar</a></li>
+      <li><a class="dropdown-item" >Something else here</a></li>
+    </ul>
+  </div>
+
+
     <div *ngIf="ThereData!; then thenBlock else elseBlock"></div>
     <ng-template #elseBlock>
-        <button class="row" (click)='getData()'>Visualizar Todo</button>
-        <div class="cont-img">
-          <img   [src] = 'showImg()' class="img-fluid">    
-        </div>
+      <div class="cont-img">
+        <img   [src] = 'showImg()' class="img-fluid">    
+      </div>
       </ng-template>
     
     <ng-template #thenBlock>
     
-    <button (click)='eraseData()'>Limpiar info</button>
     <mat-list class="py-5">
-        <mat-list-item class="h-auto" *ngFor="let element of infoDataAll">
-          <mat-icon matListItemIcon>folder</mat-icon>
-          <h3 matListItemTitle>{{element.name}}</h3>
-          <p matListItemLine>
-            <span>info</span>
-            -- {{element.info}} <br>
-           <span>horario de atención</span>
-           <span> -- {{element.schedule}}</span>
-          </p>
-        </mat-list-item>
+      <mat-list-item class="h-auto" *ngFor="let element of infoDataAll">
+        <mat-icon matListItemIcon>folder</mat-icon>
+        <h3 matListItemTitle></h3>
+        <p matListItemLine *ngFor="let item of key">
+          
+          <span>{{item}}</span>
+          
+          <span class="demo-2"> -- {{element[item]}}</span>
+          
+        </p>
+      </mat-list-item>
       </mat-list>
     </ng-template>
     

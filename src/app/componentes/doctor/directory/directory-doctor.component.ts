@@ -1,3 +1,4 @@
+import { ArrayType } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { GeneralServiceService } from 'src/app/services/General/General-service.service';
 
@@ -8,8 +9,10 @@ import { GeneralServiceService } from 'src/app/services/General/General-service.
 })
 export class DirectoryDoctorComponent implements OnInit {
   public MessageWelcome : any;
-
+  public resultado : any[] = [];
   public infoDataAll : any;
+  public key : any;
+  public values : any;
   public UrlAll : String = "doctors/all"
   public ThereData : boolean = false;
   
@@ -36,10 +39,20 @@ export class DirectoryDoctorComponent implements OnInit {
       {
         next: (value) => {this.infoDataAll = value
         console.log(value)},
-        error:(error) =>{window.alert("Inicie sesión para consultar esta información")},
-        complete:()=>{this.ThereData = true,console.log(this.ThereData)}
+        error:(error) =>{
+          window.alert("Inicie sesión para consultar esta información");
+
+        },
+        complete:()=>{
+          this.manageDate();
+          this.ThereData = true,console.log(this.ThereData)}
       }
     )
+ }
+
+ manageDate() : void{
+  this.key = Object.keys(this.infoDataAll[0]).filter(item => item != 'id');
+  this.values = Object.values(this.infoDataAll[0]);
  }
 
 eraseData(): void{

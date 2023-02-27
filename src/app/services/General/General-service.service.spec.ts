@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-
-import { WelcomePageServiceService } from './welcome-page-service.service';
+import { GeneralServiceService } from './General-service.service';
 
 describe('WelcomePageServiceService', () => {
-  let service: WelcomePageServiceService;
+  let service: GeneralServiceService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(WelcomePageServiceService);
+    service = TestBed.inject(GeneralServiceService);
   });
 
   it('should be created', () => {

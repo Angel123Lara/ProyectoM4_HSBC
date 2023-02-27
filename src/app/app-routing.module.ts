@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddOneComponent } from './componentes/doctor/add-one/add-one.component';
 import { DirectoryDoctorComponent } from './componentes/doctor/directory/directory-doctor.component';
 import { DirectoryHospitalComponent } from './componentes/hospital/directory/directory-hospital.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -13,7 +14,11 @@ const routes: Routes = [
  
   {path: "welcome",component: WelcomePageComponent, canActivate: [AuthGuard]},
   {path: "login", component: LoginComponent},
-  {path: "doctor",component: DirectoryDoctorComponent},
+  {path: "doctor",component: DirectoryDoctorComponent,
+    children:[
+      {path: "add", component: AddOneComponent}
+    ]
+  },
   {path: "hospital",component: DirectoryHospitalComponent},
   {path: "speciality",component: DirectorySpecialityComponent},
  

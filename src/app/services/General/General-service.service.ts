@@ -21,4 +21,12 @@ export class GeneralServiceService {
   getDataAll(pathAdd : String) {
     return this.http.get(this.url + pathAdd,{context:addToken()})
   }
+
+
+  create(body : any, pathAdd : String) {
+    
+  
+    return this.http.post(this.url + pathAdd,body, {responseType: 'json'})
+
+  }
 }

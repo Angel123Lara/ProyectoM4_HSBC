@@ -6,8 +6,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 
-
-
 @NgModule({
   declarations: [MenuMainComponent],
   imports: [
@@ -18,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
     MenuMainComponent,
     MatListModule,
     MatIconModule,
+    AppRoutingModule
 
   ]
 
