@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DirectoryDoctorComponent } from './directory/directory-doctor.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AddOneDocComponent } from './add-oneDoc/add-one.component';
-import { FormsModule } from '@angular/forms';
+
 import { DeleteDocComponent } from './delete-doc/delete-doc.component';
 
 

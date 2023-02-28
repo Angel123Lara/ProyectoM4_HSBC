@@ -1,5 +1,5 @@
   
-  <nav mat-tab-nav-bar ngClass="tabs" >
+<nav mat-tab-nav-bar ngClass="tabs" [tabPanel]="tabPanel" >
     
     <a mat-tab-link [routerLink]="['/doctor']">
         Doctores
@@ -10,4 +10,5 @@
     <a mat-tab-link [routerLink]="['/speciality']">
         Especialidades
     </a>
-  </nav>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>

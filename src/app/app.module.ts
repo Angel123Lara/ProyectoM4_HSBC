@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { DoctorModule } from './componentes/doctor/doctor.module';
 import { LoginComponent } from './componentes/login/login.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
-//import { AddOneDocComponent } from './componentes/doctor/add-oneDoc/add-one.component';
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     AppComponent,
     NotFoundComponent,
     LoginComponent,
-   // AddOneDocComponent
 
   ],
   imports: [
@@ -41,6 +39,6 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
       provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
     }  
     ],
-  bootstrap: [AppComponent, LoginComponent, DoctorModule]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

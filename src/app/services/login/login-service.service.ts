@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Credentials } from 'src/app/models/credentials.models';
@@ -13,7 +13,6 @@ export class LoginServiceService {
   login(creds: Credentials): Observable<HttpResponse<Object>>{
 
     return this.http.post('http://localhost:8001/login',creds,{
-      //headers : new HttpHeaders({'Content-Type' : 'aplication/json'}),
       observe: 'response'
       
     })
