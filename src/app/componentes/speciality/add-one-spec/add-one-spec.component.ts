@@ -34,6 +34,7 @@ export class AddOneSpecComponent {
 
 
     create(form: NgForm){
+      this.sucessful= false;
       console.log('Form value', form.value)
       this.GeneralServie.create(this.contenido,"MedicalSpeciality/create")
       .subscribe(
@@ -50,6 +51,7 @@ export class AddOneSpecComponent {
           },
           complete:()=>{console.log("complete");
           this.sucessful= true;
+          this.existError = false;
         }
         }
         

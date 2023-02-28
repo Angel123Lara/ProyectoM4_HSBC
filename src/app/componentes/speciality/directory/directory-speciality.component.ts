@@ -17,6 +17,8 @@ export class DirectorySpecialityComponent implements OnInit{
   public key : any;
   public values : any;
 
+  public elementInfo : any;
+
   constructor(
     private GeneralService : GeneralServiceService,
     private router : Router
@@ -64,6 +66,14 @@ manageDate() : void{
   this.router.navigate(['speciality/delete/' + element.id]);
   window.alert("¿Desea realmente eliminar el siguiente registro "+ element.name);
   
+}
+
+update(element: any){
+  this.elementInfo = element;
+  this.ThereData = true;
+  this.infoDataAll = [];
+  this.router.navigate(['speciality/update/' + element.id]);
+  window.alert("El siguiente registro se editará" + element.name)
 }
 
 eraseData(): void{

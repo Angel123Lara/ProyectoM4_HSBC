@@ -27,6 +27,7 @@ export class AddOneDocComponent {
 
 create(form: NgForm){
   console.log('Form value', form.value)
+  this.sucessful= false;
   this.GeneralServie.create(this.contenido,"doctors/create")
   .subscribe(
     {
@@ -40,8 +41,10 @@ create(form: NgForm){
         this.keyError = Object.keys(this.erroresAux);
         
       },
-      complete:()=>{console.log("complete");
-      this.sucessful= true;
+      complete:()=>{;
+        this.sucessful= true;
+        this.existError = false;
+        console.log("complete")
     }
     }
     

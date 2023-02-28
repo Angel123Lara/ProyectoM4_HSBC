@@ -5,6 +5,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { AddOneDocComponent } from './add-oneDoc/add-one.component';
 
 import { DeleteDocComponent } from './delete-doc/delete-doc.component';
+import { UpdateDocComponent } from './update-doc/update-doc.component';
 
 
 
@@ -12,7 +13,7 @@ import { DeleteDocComponent } from './delete-doc/delete-doc.component';
 
 @NgModule({
   declarations: [
-    DirectoryDoctorComponent, AddOneDocComponent, DeleteDocComponent],
+    DirectoryDoctorComponent, AddOneDocComponent, DeleteDocComponent, UpdateDocComponent],
   imports: [
     CommonModule,SharedModule
   ],

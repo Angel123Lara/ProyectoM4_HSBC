@@ -1,0 +1,38 @@
+<div>Edit page</div>
+
+<div *ngIf="!contenido; then thenBlock else elseBlock"></div>
+
+<ng-template #elseBlock>
+<div class="container py-5">
+    <form class="mx-auto" style="max-width: 25rem;" #form="ngForm" (ngSubmit)="update(form)">
+        <h1 class="mb-5 text -center">Editar registro</h1>
+        <div id="MessageError">
+            <li class="list-group-item containerMsgError" [hidden]="!existError"
+                *ngFor="let counter of keyError"
+                (click) = "existError = false">
+                {{erroresAux[counter]}}
+            </li>
+            </div>
+            <div id="msgExito" [hidden]="!sucessful">
+                <p (click)="sucessful = false">
+                    Registro Guardado con éxito
+                </p>
+    
+            </div>
+        <div class="mb-3">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="nombre" class="form-control" placeholder="contenido.name" [(ngModel)]="contenido.name">
+            
+        </div>
+        <div class="mb-3">
+            <label for="cedula"> Cedula </label>
+            <input id="cedula" name="cedula" type="cedula" class="form-control" placeholder="contenido.cedula" [(ngModel)]="contenido.cedula">
+        </div>
+
+        <div class="d-grid">
+            <button class="btn btn-lg btn-primary"> Actualizar</button>
+        </div>
+    </form>
+</div>
+</ng-template>
+<ng-template #thenBlock>Espere porfavor...</ng-template>

@@ -10,14 +10,14 @@ import { GeneralServiceService } from 'src/app/services/General/General-service.
 export class DirectoryHospitalComponent implements OnInit{
   public MessageWelcome : any;
   public infoDataAll : any;
-  public UrlAll : String = "hospitals/all"
-  public ThereData : boolean = false;
-
   public key : any;
   public values : any;
+  public UrlAll : String = "hospitals/all"
+  public ThereData : boolean = false;
+  public elementInfo : any;
 
-  public toDeleteItem : any;
-  public id : any;
+  
+
 
 
   constructor(
@@ -34,7 +34,8 @@ export class DirectoryHospitalComponent implements OnInit{
        error:(error) =>{window.alert(error.message)}
        }
          
-    )            
+    )
+    this.ThereData = false;             
  }
  getData() : void{
 
@@ -63,6 +64,13 @@ manageDate() : void{
   this.key = Object.keys(this.infoDataAll[0]).filter(item => item != 'id');
   this.values = Object.values(this.infoDataAll[0]);
  }
+update(element: any){
+  this.elementInfo = element;
+  this.ThereData = true;
+  this.infoDataAll = [];
+  this.router.navigate(['hospital/update/' + element.id]);
+  window.alert("El siguiente registro se editará " + element.name)
+}
 
 eraseData(): void{
   this.ThereData = false;

@@ -28,7 +28,10 @@
     <ng-template #thenBlock>
     
     <mat-list class="py-5">
+      <div *ngIf="!infoDataAll; then thenBlock else elseBlock"></div>
+      <ng-template #elseBlock> 
       <mat-list-item class="h-auto" *ngFor="let element of infoDataAll">
+        <mat-icon matListItemIcon (click)="update(element)">edit</mat-icon>
         <mat-icon matListItemIcon (click)="eliminar(element)">delete</mat-icon>
         <mat-icon matListItemIcon>folder</mat-icon>
         <h3 matListItemTitle></h3>
@@ -40,6 +43,8 @@
           
         </p>
       </mat-list-item>
+      </ng-template>
+      <ng-template #thenBlock></ng-template>
       </mat-list>
     </ng-template>
     <router-outlet></router-outlet>

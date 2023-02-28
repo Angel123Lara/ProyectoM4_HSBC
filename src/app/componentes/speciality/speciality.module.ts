@@ -4,6 +4,7 @@ import { DirectorySpecialityComponent } from './directory/directory-speciality.c
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AddOneSpecComponent } from './add-one-spec/add-one-spec.component';
 import { DeleteSpecComponent } from './delete-spec/delete-spec.component';
+import { UpdateSpecComponent } from './update-spec/update-spec.component';
 
 
 
@@ -11,7 +12,8 @@ import { DeleteSpecComponent } from './delete-spec/delete-spec.component';
   declarations: [
     DirectorySpecialityComponent,
     AddOneSpecComponent,
-    DeleteSpecComponent
+    DeleteSpecComponent,
+    UpdateSpecComponent
   ],
   imports: [
     CommonModule,SharedModule

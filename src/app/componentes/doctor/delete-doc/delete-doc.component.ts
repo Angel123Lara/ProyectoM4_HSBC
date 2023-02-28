@@ -38,6 +38,8 @@ export class DeleteDocComponent implements OnInit{
 
         }
       )
+
+      
   }
 
 }

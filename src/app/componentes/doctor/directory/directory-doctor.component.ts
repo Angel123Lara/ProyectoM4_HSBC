@@ -1,4 +1,4 @@
-import { ArrayType } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralServiceService } from 'src/app/services/General/General-service.service';
@@ -10,12 +10,12 @@ import { GeneralServiceService } from 'src/app/services/General/General-service.
 })
 export class DirectoryDoctorComponent implements OnInit {
   public MessageWelcome : any;
-  public resultado : any[] = [];
   public infoDataAll : any;
   public key : any;
   public values : any;
   public UrlAll : String = "doctors/all"
   public ThereData : boolean = false;
+  public elementInfo : any;
   
   constructor(
     private GeneralService : GeneralServiceService,
@@ -29,8 +29,11 @@ export class DirectoryDoctorComponent implements OnInit {
        error:(error) =>{window.alert(error.message)},
     
        }
+
          
-    )   
+   )
+   this.ThereData = false; 
+   
     
     
  }
@@ -64,10 +67,18 @@ export class DirectoryDoctorComponent implements OnInit {
  }
 
 eliminar(element : any){
-  this.ThereData = false;
+  this.ThereData = true;
   this.router.navigate(['doctor/delete/' + element.id]);
   window.alert("¿Desea realmente eliminar el siguiente registro "+ element.name);
   
+}
+
+update(element: any){
+  this.elementInfo = element;
+  this.ThereData = true;
+  this.infoDataAll = [];
+  this.router.navigate(['doctor/update/' + element.id]);
+  window.alert("El siguiente registro se editará " + element.name)
 }
 eraseData(): void{
   this.ThereData = false;

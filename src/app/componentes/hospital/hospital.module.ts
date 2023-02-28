@@ -4,6 +4,7 @@ import { DirectoryHospitalComponent } from './directory/directory-hospital.compo
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AddOneHospComponent } from './add-oneHosp/add-one.component';
 import { DeleteHospComponent } from './delete-hosp/delete-hosp.component';
+import { UpdateHospComponent } from './update-hosp/update-hosp.component';
 
 
 
@@ -11,7 +12,8 @@ import { DeleteHospComponent } from './delete-hosp/delete-hosp.component';
   declarations: [
     DirectoryHospitalComponent,
     AddOneHospComponent,
-    DeleteHospComponent
+    DeleteHospComponent,
+    UpdateHospComponent
   ],
   imports: [
     CommonModule,SharedModule

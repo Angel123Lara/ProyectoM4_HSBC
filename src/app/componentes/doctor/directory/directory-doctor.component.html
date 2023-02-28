@@ -15,7 +15,6 @@
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" (click)="getData()" [routerLink]="['/doctor']">Ver todo</a></li>
     <li><a class="dropdown-item" (click)="eraseData(); ThereData=false" [routerLink]="['/doctor/add']">Añadir</a></li>
-    <li><a class="dropdown-item" (click)="eraseData();ThereData=false">Modificar</a></li>
     
   </ul>
 </div>
@@ -34,8 +33,10 @@
 
 
 <mat-list>
-    
+  <div *ngIf="!infoDataAll; then thenBlock else elseBlock"></div>
+  <ng-template #elseBlock> 
   <mat-list-item class="h-auto" *ngFor="let element of infoDataAll">
+    <mat-icon matListItemIcon (click)="update(element)">edit</mat-icon>
     <mat-icon matListItemIcon (click)="eliminar(element)">delete</mat-icon>
     <mat-icon matListItemIcon>folder</mat-icon>
     <h3 matListItemTitle></h3>
@@ -47,9 +48,12 @@
       
     </p>
   </mat-list-item>
+  </ng-template>
+  <ng-template #thenBlock></ng-template>
   </mat-list>
 
 </ng-template>
+
 <router-outlet></router-outlet>
 
 
