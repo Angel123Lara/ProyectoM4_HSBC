@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddOneDocComponent } from './componentes/doctor/add-oneDoc/add-one.component';
+import { DeleteDocComponent } from './componentes/doctor/delete-doc/delete-doc.component';
 import { DirectoryDoctorComponent } from './componentes/doctor/directory/directory-doctor.component';
 import { AddOneHospComponent } from './componentes/hospital/add-oneHosp/add-one.component';
 import { DeleteHospComponent } from './componentes/hospital/delete-hosp/delete-hosp.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "doctor",component: DirectoryDoctorComponent,
     children:[
-      {path: "add", component: AddOneDocComponent}
+      {path: "add", component: AddOneDocComponent},
+      {path: "delete/:id", component:DeleteDocComponent, canActivate:[AuthGuard]}
     ]
   },
   {path: "hospital",component: DirectoryHospitalComponent,

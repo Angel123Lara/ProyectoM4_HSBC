@@ -30,6 +30,7 @@ export class DeleteHospComponent implements OnInit {
       error:(error) =>{window.alert(error.message)},
       complete:() =>{
         console.log("complete")
+        window.alert("Registro eliminado con éxito")
         this.router.navigate(['hospital'])
         
       

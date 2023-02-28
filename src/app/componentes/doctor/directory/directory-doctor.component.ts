@@ -1,5 +1,6 @@
 import { ArrayType } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralServiceService } from 'src/app/services/General/General-service.service';
 
 @Component({
@@ -18,6 +19,8 @@ export class DirectoryDoctorComponent implements OnInit {
   
   constructor(
     private GeneralService : GeneralServiceService,
+    private router: Router,
+    private route: ActivatedRoute
     ){}
   ngOnInit(): void {
      
@@ -40,12 +43,18 @@ export class DirectoryDoctorComponent implements OnInit {
         next: (value) => {this.infoDataAll = value
         console.log(value)},
         error:(error) =>{
-          window.alert("Inicie sesión para consultar esta información");
+          window.alert(error.message)
 
         },
         complete:()=>{
-          this.manageDate();
-          this.ThereData = true,console.log(this.ThereData)}
+          if(this.infoDataAll.length != 0){
+            this.manageDate();
+            this.ThereData = true, console.log(this.ThereData)
+            }else{
+              window.alert("No existe registro")
+              this.ThereData = false
+            }
+          }
       }
     )
  }
@@ -55,6 +64,12 @@ export class DirectoryDoctorComponent implements OnInit {
   this.values = Object.values(this.infoDataAll[0]);
  }
 
+eliminar(element : any){
+  this.ThereData = false;
+  this.router.navigate(['doctor/delete/' + element.id]);
+  window.alert("¿Desea realmente eliminar el siguiente registro "+ element.name);
+  
+}
 eraseData(): void{
   this.ThereData = false;
   this.infoDataAll = {}
