@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SpecialidadData } from 'src/app/models/specialidad.models';
 import { GeneralServiceService } from 'src/app/services/General/General-service.service';
 import { DirectoryHospitalComponent } from '../../hospital/directory/directory-hospital.component';
+import { DirectorySpecialityComponent } from '../directory/directory-speciality.component';
 
 @Component({
   selector: 'app-update-spec',
@@ -25,7 +26,7 @@ export class UpdateSpecComponent {
 
   constructor(
     private GeneralService : GeneralServiceService,
-    private infoService : DirectoryHospitalComponent,
+    private infoService : DirectorySpecialityComponent,
     private router : Router,
     private route : ActivatedRoute
     

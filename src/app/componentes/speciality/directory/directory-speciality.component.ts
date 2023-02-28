@@ -73,7 +73,7 @@ update(element: any){
   this.ThereData = true;
   this.infoDataAll = [];
   this.router.navigate(['speciality/update/' + element.id]);
-  window.alert("El siguiente registro se editará" + element.name)
+  window.alert("El siguiente registro se editará " + element.name)
 }
 
 eraseData(): void{
