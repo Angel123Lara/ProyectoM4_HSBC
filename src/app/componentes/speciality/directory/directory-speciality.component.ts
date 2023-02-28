@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GeneralServiceService } from 'src/app/services/General/General-service.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class DirectorySpecialityComponent implements OnInit{
   public values : any;
 
   constructor(
-    private GeneralService : GeneralServiceService
+    private GeneralService : GeneralServiceService,
+    private router : Router
     ){}
   
   
@@ -39,8 +41,14 @@ export class DirectorySpecialityComponent implements OnInit{
       console.log(this.infoDataAll)},
       error:(error) =>{window.alert(error.message)},
       complete:()=>{
-        this.manageDate();
-        this.ThereData = true,console.log(this.ThereData)}
+        if(this.infoDataAll.length != 0){
+          this.manageDate();
+          this.ThereData = true, console.log(this.ThereData)
+          }else{
+            window.alert("No existe registro")
+            this.ThereData = false
+          }
+        }
     }
   )
 
@@ -50,6 +58,13 @@ manageDate() : void{
   this.key = Object.keys(this.infoDataAll[0]).filter(item => item != 'id');
   this.values = Object.values(this.infoDataAll[0]);
  }
+
+ eliminar(element : any){
+  this.ThereData = false;
+  this.router.navigate(['speciality/delete/' + element.id]);
+  window.alert("¿Desea realmente eliminar el siguiente registro "+ element.name);
+  
+}
 
 eraseData(): void{
   this.ThereData = false;

@@ -35,7 +35,7 @@ export class AddOneSpecComponent {
 
     create(form: NgForm){
       console.log('Form value', form.value)
-      this.GeneralServie.create(this.contenido,"hospitals/create")
+      this.GeneralServie.create(this.contenido,"MedicalSpeciality/create")
       .subscribe(
         {
         next: (value) => {

@@ -9,6 +9,7 @@ import { DirectoryHospitalComponent } from './componentes/hospital/directory/dir
 import { LoginComponent } from './componentes/login/login.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import { AddOneSpecComponent } from './componentes/speciality/add-one-spec/add-one-spec.component';
+import { DeleteSpecComponent } from './componentes/speciality/delete-spec/delete-spec.component';
 import { DirectorySpecialityComponent } from './componentes/speciality/directory/directory-speciality.component';
 import { WelcomePageComponent } from './componentes/welcome-page/directory/welcome-page.component';
 import { AuthGuard } from './helpers/auth.guard';
@@ -31,7 +32,8 @@ const routes: Routes = [
   ]},
   {path: "speciality",component: DirectorySpecialityComponent,
   children:[
-    {path: "add", component: AddOneSpecComponent}
+    {path: "add", component: AddOneSpecComponent},
+    {path: "delete/:id", component: DeleteSpecComponent, canActivate:[AuthGuard]}
   ]},
  
   {path: "", redirectTo: "welcome",pathMatch: "full"},

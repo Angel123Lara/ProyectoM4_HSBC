@@ -19,8 +19,7 @@ export class DirectoryDoctorComponent implements OnInit {
   
   constructor(
     private GeneralService : GeneralServiceService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
     ){}
   ngOnInit(): void {
      

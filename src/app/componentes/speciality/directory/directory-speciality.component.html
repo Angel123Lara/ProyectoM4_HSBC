@@ -12,11 +12,8 @@
     
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" (click)="getData()" [routerLink]="['/speciality']">Ver todo</a></li>
-      <li><a class="dropdown-item" (click)="eraseData()">Buscar</a></li>
       <li><a class="dropdown-item" (click)="eraseData(); ThereData=false" [routerLink]="['/speciality/add']">Añadir</a></li>
       <li><a class="dropdown-item" (click)="eraseData();ThereData=false">Modificar</a></li>
-      <li><a class="dropdown-item" (click)="eraseData(); ThereData=false" [routerLink]="['/speciality/delete']">Eliminar</a></li>
-      <li><a class="dropdown-item" >Something else here</a></li>
     </ul>
   </div>
 
@@ -32,6 +29,7 @@
     
     <mat-list class="py-5">
       <mat-list-item class="h-auto" *ngFor="let element of infoDataAll">
+        <mat-icon matListItemIcon (click)="eliminar(element)">delete</mat-icon>
         <mat-icon matListItemIcon>folder</mat-icon>
         <h3 matListItemTitle></h3>
         <p matListItemLine *ngFor="let item of key">
@@ -47,32 +45,3 @@
     <router-outlet></router-outlet>
     
     </div>
-
-
-<!-- 
-<button (click)='getData()'>Visualizar Todo</button>
-<h6></h6>
-<div class="cont-img">
-    <img   [src] = 'showImg()' class="img-fluid">    
-  </div>
-<ul *ngFor= "let element of infoDataAll">
-    <li>{{"Medical Speciality " + element.id}}
-        <ul>
-            Name
-            <li>
-            {{element.name}}
-            </li>
-        </ul>
-        <ul>
-            info
-            <li>
-            {{element.info}}
-            </li>
-        </ul>
-        <ul>
-            Phone
-            <li>
-            {{element.schedule}}
-            </li>
-        </ul>
-    </li> -->
