@@ -31,9 +31,17 @@ export class LoginComponent {
   
     
     .subscribe(
-      response => {
-     console.log(response);
-      this.router.navigate(['/']);
+      {
+        next:(value)=>{
+          console.log(value)
+        },
+        error: (error)=>{
+          window.alert("el email o contraseña son incorrectos")
+        },
+        complete:()=>{
+          this.router.navigate(['/']);
+        }
+      
     })
   }
 

@@ -7,6 +7,7 @@ import { Credentials } from 'src/app/models/credentials.models';
   providedIn: 'root'
 })
 export class LoginServiceService {
+  public isLog : any;
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +24,11 @@ export class LoginServiceService {
       const token = bearerToken.replace('Bearer','');
 
       localStorage.setItem('token', token);
+      
+      this.isLog = true;
+      if(this.isLog){
+        console.log("log con exito")
+      }
 
       return body;
     }))
@@ -31,5 +37,10 @@ export class LoginServiceService {
 
   getToken(){
     return localStorage.getItem('token');
+  }
+
+  deleteToken(){
+    localStorage.removeItem('token')
+    this.isLog = false;
   }
 }
